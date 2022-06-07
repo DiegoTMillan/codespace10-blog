@@ -1,6 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Entrada{% endblock %}
+{% block title %}Edit Entrada - {{entrada.titulo}}
+{% endblock %}
+
+{% block actions %}
+    <div class="btn-group me-2">
+        <a href="{{path('app_admin_entrada_index')}}"  class="btn rounded btn-info me-2">Volver al listado</a>  
+        {{include('admin/entrada/_delete_form.html.twig')}}
+    </div>
+{% endblock %}
 
 {% block body %}
     {{ include('admin/entrada/_form.html.twig', {'button_label': 'Update'}) }}
