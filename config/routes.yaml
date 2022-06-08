@@ -8,4 +8,4 @@ app_logout:
 
 # config/routes.yaml
 api_login_check:
-    path: /api/login_check
+  path: /api/login_check

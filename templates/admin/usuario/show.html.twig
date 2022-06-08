@@ -2,9 +2,10 @@
 
 {% block title %}Usuario{% endblock %}
 
-{% block body %}
-    <h1>Usuario</h1>
+{% block actions %}
+{% endblock %}
 
+{% block body %}
     <table class="table">
         <tbody>
             <tr>
@@ -33,10 +34,8 @@
             </tr>
         </tbody>
     </table>
-
-    <a href="{{ path('app_admin_usuario_index') }}">back to list</a>
-
-    <a href="{{ path('app_admin_usuario_edit', {'id': usuario.id}) }}">edit</a>
-
+    <div class="flex">
+    <button class="btn btn-info" href="{{ path('app_admin_usuario_edit', {'id': usuario.id}) }}">edit</button>
     {{ include('admin/usuario/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Espacio;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Knp\Component\Pager\PaginatorInterface;
 
 /**
  * @extends ServiceEntityRepository<Espacio>
@@ -37,6 +38,11 @@ class EspacioRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+    }
+    public function getQueryAll()
+    {
+        $qb = $this->createQueryBuilder('e');
+            return $qb->getQuery();
     }
 
 //    /**
