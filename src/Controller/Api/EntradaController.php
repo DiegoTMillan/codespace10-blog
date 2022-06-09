@@ -16,7 +16,7 @@ class EntradaController extends AbstractController
     /**
      * @Route("/api/entrada", methods={"GET"})
      */
-    public function index(Request $request, EntradaRepository $entradaRepository, PaginatorInterface $paginator ): Response
+    public function index(Request $request, EntradaRepository $entradaRepository, PaginatorInterface $paginator): Response
     {
         $currentPage = $request->query->get('page', 1);
         $query = $entradaRepository->getQueryAll();
